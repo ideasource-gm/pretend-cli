@@ -1,6 +1,6 @@
 {
   "name": "pretend-cli",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Transforms any HTML page into a terminal-style CLI UI with a single script tag.",
   "main": "pretend-cli.js",
   "scripts": {
