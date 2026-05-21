@@ -98,7 +98,7 @@
   <script src="https://cdn.jsdelivr.net/npm/figlet/lib/figlet.js"></script>
   <script src="pretend-cli.js"></script>
   <script>
-    figlet.defaults({ fontPath: '' });
+    figlet.defaults({ fontPath: '.' });
     figlet.preloadFonts(['Standard'], function () {
       PretendCLI.init({
         target:                 '#terminal-zone',
