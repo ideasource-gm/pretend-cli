@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PretendCLI.js — Demo</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background: #f5f5f5;
+    }
+    #terminal-zone {
+      min-height: 100vh;
+      padding: 24px;
+      box-sizing: border-box;
+    }
+    #terminal-zone img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ここがPretendCLIが変換するゾーン -->
+  <div id="terminal-zone">
+    <h1>PretendCLI.js</h1>
+    <p>CLIのふりをするJSライブラリ。HTMLにJSを1行追加するだけで、このページがターミナル風になります。</p>
+
+    <h2>cat features</h2>
+    <ul>
+      <li>依存ライブラリなし（Vanilla JS）</li>
+      <li>タイピングアニメーション</li>
+      <li>4つのカラーテーマ（dark / light / green / amber）</li>
+      <li>画像をASCIIアートに自動変換</li>
+      <li>インライン・ナビゲーション</li>
+    </ul>
+
+    <h2>photo</h2>
+    <img src="sample.jpg" alt="sample photo">
+
+    <h2>cat usage</h2>
+    <p>HTMLに <strong>&lt;script src="pretend-cli.js"&gt;&lt;/script&gt;</strong> を追加し、PretendCLI.init() を呼ぶだけです。</p>
+
+    <h2>cat video</h2>
+    <video width="400" controls>
+      <source src="demo.mp4" type="video/mp4">
+    </video>
+
+    <h2>cat table</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>コマンド</th>
+          <th>説明</th>
+          <th>使用頻度</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ls</td>
+          <td>ファイル一覧を表示</td>
+          <td>★★★</td>
+        </tr>
+        <tr>
+          <td>cd</td>
+          <td>ディレクトリを移動</td>
+          <td>★★★</td>
+        </tr>
+        <tr>
+          <td>cat</td>
+          <td>ファイルの内容を表示</td>
+          <td>★★☆</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>cat profile</h2>
+    <div>
+      <span>名前:</span> <span>PretendCLI 開発者</span>
+    </div>
+    <div>
+      <span>役割:</span> <span>Vanilla JSエンジニア</span>
+    </div>
+    <div>
+      <span>好きなテーマ:</span> <span>amber</span>
+    </div>
+
+    <h2>ls links/</h2>
+    <ul>
+      <li><a href="about.html">about.html（同一サイト・インライン表示のデモ）</a></li>
+      <li><a href="https://github.com/">GitHub（外部リンクのデモ）</a></li>
+    </ul>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/figlet/lib/figlet.js"></script>
+  <script src="pretend-cli.js"></script>
+  <script>
+    figlet.defaults({ fontPath: '' });
+    figlet.preloadFonts(['Standard'], function () {
+      PretendCLI.init({
+        target:                 '#terminal-zone',
+        theme:                  'dark',
+        image:                  'ascii',
+        navigation:             'inline',
+        defaultMode:            'cli',
+        logo:                   { type: 'figlet', font: 'Standard' },
+        imageDisplayWidth: 400,
+        backgroundVideo: [
+          'demo.webm',
+          'demo.mp4',
+        ],
+        backgroundVideoOverlay: 0.2,
+        backgroundVideoOpacity: 0.7,
+      });
+    });
+  </script>
+</body>
+</html>

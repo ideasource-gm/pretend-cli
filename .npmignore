@@ -1,0 +1,14 @@
+# デモ用ファイル（npmパッケージには不要）
+index.html
+about.html
+sample.jpg
+demo.mp4
+demo.webm
+Standard.flf
+cli.md
+12922667_1920_1080_30fps.mp4
+
+# 開発・システムファイル
+.DS_Store
+node_modules/
+*.log
