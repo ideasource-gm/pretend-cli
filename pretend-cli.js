@@ -93,6 +93,8 @@
     injectStyles();
     buildQueue();
     _container.innerHTML = '';
+    // innerHTML クリア後にトグルボタンを再appended（target: 'body' 対策）
+    if (_toggleEl) document.body.appendChild(_toggleEl);
     runQueue();
     bindSkipOnInteraction();
     if (_options.navigation === 'inline') bindNavigation();
