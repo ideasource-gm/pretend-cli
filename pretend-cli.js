@@ -696,11 +696,20 @@
       const href = link.getAttribute('href');
       if (!href) return;
 
+      // 絶対URLでも同一ドメインならインラインナビとして扱う
       if (/^https?:\/\/|^\/\//.test(href)) {
-        e.preventDefault();
-        printLine('[opening external link...]', 'pcli-output');
-        setTimeout(() => window.open(href, '_blank'), 500);
-        return;
+        try {
+          const url = new URL(href);
+          if (url.hostname !== window.location.hostname) {
+            e.preventDefault();
+            printLine('[opening external link...]', 'pcli-output');
+            setTimeout(() => window.open(href, '_blank'), 500);
+            return;
+          }
+          // 同一ドメインの絶対URLは相対パスに変換して続行
+        } catch (e) {
+          return;
+        }
       }
 
       if (href.startsWith('#')) {
