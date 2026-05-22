@@ -1,6 +1,6 @@
 {
   "name": "pretend-cli",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Transforms any HTML page into a terminal-style CLI UI with a single script tag.",
   "main": "pretend-cli.js",
   "scripts": {
@@ -17,7 +17,7 @@
   ],
   "author": "ideasource",
   "license": "MIT",
-  "homepage": "https://github.com/ideasource-gm/pretend-cli#readme",
+  "homepage": "https://ideasource-gm.github.io/pretend-cli/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ideasource-gm/pretend-cli.git"
